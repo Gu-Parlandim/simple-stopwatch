@@ -23,37 +23,53 @@ main {
 
 
 .entrada_dados {
-    font-size: 2em;
+    font-size: 3.5em;
     color: #141414;
     text-align: center;
-}
-
-.entrada_dados input {
-    border: none;
-    background-color: transparent;
-    font-size: 2em;
-    color: white;
-    width: 80px;
-    padding-left:10px ;
-}
-
-.entrada_dados input:focus {
-    outline: none;
 }
 
 .botoes {
     display: flex;
 }
-.botoes input {
-    margin: 10px;
-    padding: 5px;
-    border-radius: 5px;
+.botoes button {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
     border: none;
+    color: white;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
 }
 
-.botoes input:hover {
+.botoes button img {
+    margin-right: 4px;
+}
+
+.botoes #iniciar{
+    background-color: green;
+}
+
+.botoes #pausar{
+    background-color: rgb(36, 39, 36);
+}
+
+.botoes #reiniciar{
+    background-color: rgb(226, 0, 0);
+}
+
+.botoes  button:hover {
     transition: 0.2s;
-    background-color: rgb(54, 50, 50);
+    background-color: rgb(247, 241, 241);
     cursor: pointer;
     color: rgb(245, 245, 245);
+}
+
+
+@media (max-width:500px){
+    .botoes {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }

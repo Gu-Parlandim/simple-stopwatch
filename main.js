@@ -1,18 +1,17 @@
-let  intervalo
+let intervalo
 let display = document.querySelector(".entrada_dados")
 let horas = 0
 let minutos = 0
 let segundos = 0
+let estadoAtual
 
 function iniciar(){
+    estadoAtual = true
+    statusAtual(estadoAtual)
     intervalo = setInterval(function(){
         segundos++
         display.innerHTML = verificarHora(horas, minutos, segundos)
     }, 1000)
-}
-
-function pausa(){
-    clearInterval(intervalo)
 }
 
 function verificarHora(hr, min, sec){
@@ -37,7 +36,27 @@ function digitos(number){
     }
 }
 
+function statusAtual(status){
+    if(status == true){
+        document.querySelector("#iniciar").disabled = true
+    }
+    else{
+        document.querySelector("#iniciar").disabled = false
+    }
+}
+
+
+function pausa(){
+    estadoAtual = false
+    statusAtual(estadoAtual)
+    clearInterval(intervalo)
+}
+
+
 function reiniciar(){
+    estadoAtual = false
+    statusAtual(estadoAtual)
+    clearInterval(intervalo)
     horas = 0
     minutos = 0
     segundos = 0

@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="um simples cronometro feito com: HTML5, CSS3 e JavaScript.">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/image/faticon.ico" type="image/x-icon">
     <title>Contador</title>
 </head>
 <body>
@@ -13,9 +15,18 @@
                 00:00:00
            </div>
             <div class="botoes">
-                <input type="button" value="Iniciar" onclick="iniciar()">
-                <input type="button" value="Pausar" onclick="pausa()">
-                <input type="button" value="Reiniciar" onclick="reiniciar()">
+                <button id="iniciar" type="button" onclick="iniciar()"> 
+                    <img src="assets/image/play.svg" alt="botao play">
+                    iniciar
+                </button>
+                <button id="pausar" type="button"  onclick="pausa()">
+                    <img src="assets/image/pause-circle.svg" alt="botao pause">
+                    Pausar
+                </button>
+                <button id="reiniciar" type="button" onclick="reiniciar()">
+                    <img src="assets/image/stop-circle.svg" alt="botao stop">
+                    Reiniciar
+                </button>
             </div>
         </div>
     </main>
